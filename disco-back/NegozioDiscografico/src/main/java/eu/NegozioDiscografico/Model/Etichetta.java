@@ -31,7 +31,7 @@ public class Etichetta {
 	@Id
 	private String partitaIva;
 	
-	@OneToMany(cascade=CascadeType.ALL, fetch= FetchType.LAZY)
+	@OneToMany(cascade=CascadeType.ALL, fetch= FetchType.LAZY, mappedBy= "etichettaAlbum")
 	@JsonIgnore
 	private List<Album> albumProdotti;
 	

@@ -23,7 +23,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 @Entity
-@Table(name="canzone")
+@Table(name="album")
 @EntityListeners(AuditingEntityListener.class) 
 @JsonIdentityInfo(generator =ObjectIdGenerators.PropertyGenerator.class, property = "id")
 @JsonIgnoreProperties({"hibernateLazyInitializer","handler"})
@@ -68,7 +68,7 @@ public class Album {
 
 	
 	@NotBlank
-	@OneToMany(fetch=FetchType.LAZY, cascade=CascadeType.ALL)
+	@OneToMany(fetch=FetchType.LAZY, cascade=CascadeType.ALL,mappedBy= "albumContenitore")
 	@JsonIgnore
 	private List<Canzone> canzoniContenute;
 

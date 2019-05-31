@@ -39,7 +39,7 @@ public class Autore {
 	@NotBlank
 	private String lingua;
 	
-	@OneToMany(cascade=CascadeType.ALL, fetch=FetchType.LAZY)
+	@OneToMany(cascade=CascadeType.ALL, fetch=FetchType.LAZY, mappedBy= "autoreAlbum")
 	@JsonIgnore
 	private List<Album> albumIncisi;
 
